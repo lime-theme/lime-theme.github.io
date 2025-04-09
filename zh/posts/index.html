@@ -37,10 +37,10 @@
 
 
 
-  <title>Hello World - Lime</title>
+  <title>博客 - Lime</title>
 
 
-  <meta property="og:title" content="Hello World">
+  <meta property="og:title" content="博客">
 
 
   <meta name="description" content="本主题由欧雷于 2015 年开始设计与开发，并在个人网站「欧雷流」及个人各种开源软件的文档站上使用多年；在设计时以提高阅读体验和保持简洁风格为最高原则，体现个性在其次。适用于博客、个人网站、API 文档站等以内容为主的网站。">
@@ -71,7 +71,7 @@
     
 <link rel="stylesheet" href="/stylesheets/ksio/vendors/share.css">
 
-<link rel="stylesheet" href="/stylesheets/local/pages/post.css">
+<link rel="stylesheet" href="/stylesheets/local/pages/posts.css">
 
     
 
@@ -84,7 +84,9 @@
   </head>
   
   
-  <body class="Page" itemscope itemtype="http://schema.org/WebPage">
+    
+  
+  <body class="Page has-headerImage" itemscope itemtype="http://schema.org/WebPage">
     
 
   <header class="Page-header">
@@ -181,6 +183,15 @@
 
 <main class="Page-content">
   
+  
+<div class="Page-banner is-translucent hidden-xs" style="background-image: url('/images/ksio/banners/blog.jpg');">
+  <figure class="sr-only">
+    <img src="/images/ksio/banners/blog.jpg" alt="博客文章">
+    <figcaption>博客文章</figcaption>
+  </figure>
+</div>
+
+
 
   <!-- 内容主体 -->
   <div class="container">
@@ -188,16 +199,46 @@
       <header class="Article-header">
         
   
-    <h1 class="Article-title">Hello World</h1>
+    <h1 class="Article-title">博客</h1>
   
   
 
 
       </header>
       <div class="Article-content col-md-9">
+
+  
+  
+  <!-- 最新文章 -->
+  <p>最近的一篇文章发表于 <time datetime="2025-04-09T16:20:53.391Z" class="u-bold">2025 年 4 月 10 日</time>——</p>
+  <blockquote>
+    <p></p>
+    <footer>欧雷</footer>
+  </blockquote>
+  <p>想看完整内容？快戳《<a href="/posts/hello-world/">Hello World</a>》！(((o(*ﾟ▽ﾟ*)o)))</p>
+  
+  <!-- 文章列表 -->
+  <div class="ArticleList">
+    
+    
+    
+    
+      
+      
+      
+        
+          <h2 class="ArticleList-heading">2025</h2>
+        
+        <div class="ArticleList-item"><time datetime="2025-04-09T16:20:53.391Z">2025-04-10</time><i class="fa fa-pencil"></i><a href="/posts/hello-world/">Hello World</a></div>
+      
+    
+  </div>
+
+
 </div>
       <footer class="Article-footer col-md-3">
   
+
   <div class="Widget Widget--share">
     <div class="Widget-body">
       <p>分享到<i class="fa fa-share-alt"></i></p>
@@ -206,12 +247,13 @@
   </div>
 
 
-  <section class="Widget Widget--toc">
+<section class="Widget Widget--toc">
   <div class="Widget-header">
     <h2 class="Widget-title">目录</h2>
   </div>
   <div class="Widget-body"></div>
 </section>
+
 
 
 </footer>
@@ -253,7 +295,6 @@
 
 
 
-
     <script>$('.Article-content > table').addClass('table table-bordered')</script>
     
 <script src="/javascripts/ksio/vendors/share.min.js"></script>
@@ -261,16 +302,6 @@
 <script src="/javascripts/ksio/components/page.js"></script>
 
 <script src="/javascripts/ksio/components/toc.js"></script>
-
-<script src="/javascripts/ksio/vendors/jquery.timeago.js"></script>
-
-<script src="/javascripts/ksio/vendors/jquery.timeago.zh-CN.js"></script>
-
-<script src="/javascripts/ksio/initializers/time.js"></script>
-
-<script src="/javascripts/ksio/vendors/jquery.lazyload.js"></script>
-
-<script src="/javascripts/ksio/initializers/lazyload.js"></script>
 
   </body>
 </html>
