@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+
+
+
+
+
+
+
+
+
+  
+  
+  
+    
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <title>页面配置 - Lime</title>
+
+
+  <meta property="og:title" content="页面配置">
+
+
+  <meta name="description" content="本主题由欧雷于 2015 年开始设计与开发，并在个人网站「欧雷流」及个人各种开源软件的文档站上使用多年；在设计时以提高阅读体验和保持简洁风格为最高原则，体现个性在其次。适用于博客、个人网站、API 文档站等以内容为主的网站。">
+  <meta property="og:description" content="本主题由欧雷于 2015 年开始设计与开发，并在个人网站「欧雷流」及个人各种开源软件的文档站上使用多年；在设计时以提高阅读体验和保持简洁风格为最高原则，体现个性在其次。适用于博客、个人网站、API 文档站等以内容为主的网站。">
+
+
+
+  
+    
+  
+
+
+
+<!-- 页面渲染兼容性 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<!-- 订阅 -->
+
+<meta name="theme-color" content="#0871ab">
+<link rel="shortcut icon" href="/images/ksio/favicon.ico">
+
+
+    
+<link rel="stylesheet" href="/stylesheets/global.css">
+
+    
+<link rel="stylesheet" href="/stylesheets/ksio/vendors/share.css">
+
+<link rel="stylesheet" href="/stylesheets/local/syntax-highlighting.css">
+
+<link rel="stylesheet" href="/stylesheets/local/pages/post.css">
+
+<link rel="stylesheet" href="/stylesheets/local/pages/doc.css">
+
+    
+
+    
+<script src="/javascripts/ksio/vendors/jquery-1.11.3.min.js"></script>
+
+    
+<script src="/javascripts/ksio/vendors/bootstrap.min.js"></script>
+
+  </head>
+  
+  
+  <body class="Page" itemscope itemtype="http://schema.org/WebPage">
+    
+
+  <header class="Page-header">
+  <div class="navbar navbar-static-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        
+          <button class="navbar-toggle collapsed" type="button" data-target=".Page-navs" data-toggle="collapse">
+            <span class="sr-only">Toggle navs</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        
+        
+          
+
+
+  <a class="navbar-brand" href="/">Lime</a>
+
+
+        
+      </div>
+      <!-- Nav menus -->
+      <nav class="Page-navs navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+  
+  
+  
+    
+    
+      <li><a href="/zh/guides/">文档</a>
+</li>
+    
+  
+
+  
+  
+  
+    
+    
+      <li><a href="/zh/posts/">博客</a>
+</li>
+    
+  
+
+  
+  
+  
+    <li class="dropdown">
+      <a class="dropdown-toggle" href="javascript:void(0);" data-toggle="dropdown">关于 <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+  
+  
+  
+    
+    
+      <li><a href="/zh/about/">本站</a>
+</li>
+    
+  
+
+  
+  
+  
+    
+    
+      <li><a href="https://linxoid.com/ourai?utm_source=https://lime-theme.github.io&amp;utm_medium=common-header" target="_blank" rel="external nofollow">作者</a>
+</li>
+    
+  
+
+  
+  
+  
+    
+    
+      <li><a href="https://github.com/lime-theme?utm_source=https://lime-theme.github.io&amp;utm_medium=common-header" target="_blank" rel="external nofollow">GitHub</a>
+</li>
+    
+  
+
+</ul>
+    </li>
+  
+
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="Page-content">
+  
+  
+    <aside class="Page-aside">
+      <div class="AsideBrand">
+
+
+  <a href="/">Lime</a>
+
+</div>
+      <nav class="AsideNav"><ul>
+  
+  
+    
+  
+  
+    <li>
+      
+      
+      
+      
+      
+      
+        
+          <a href="/zh/guides/">概述</a>
+        
+      
+    </li>
+  
+    <li>
+      
+      
+      
+      
+      
+      
+        
+          <a href="/zh/guides/getting-started/">快速上手</a>
+        
+      
+    </li>
+  
+    <li>
+      
+      
+      
+      
+      
+      
+        <span>API</span>
+        <ul>
+  
+  
+    
+  
+  
+    <li>
+      
+      
+      
+      
+      
+      
+        <a href="/zh/apis/site-config/">网站配置</a>
+      
+    </li>
+  
+    <li>
+      
+      
+      
+      
+      
+      
+        <a class="is-selected" href="/zh/apis/page-config/">页面配置</a>
+      
+    </li>
+  
+    <li>
+      
+      
+      
+      
+      
+      
+        <a href="/zh/apis/html-reuse/">结构复用</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+</nav>
+    </aside>
+  
+  <main class="Page-main">
+    <article class="Article container-fluid">
+      <header class="Article-header">
+        
+  
+    <h1 class="Article-title">页面配置</h1>
+  
+  
+
+
+      </header>
+      <div class="Article-content col-md-9"><p>页面配置即定义在 Front Matter 中的变量，除了会用到静态网站生成器预定义与约定俗成的变量之外，本主题也自定义了一些——</p>
+<h2 id="资源注入"><a href="#资源注入" class="headerlink" title="资源注入"></a>资源注入</h2><p>除了整站共用的个别静态资源会写死在 <code>&lt;/head&gt;</code> 与 <code>&lt;/body&gt;</code> 前方之外，有些只跟特定布局和页面绑定的静态资源得按需注入，可与<a href="/zh/apis/site-config/#defaults">设置页面配置默认值</a>的能力相结合：</p>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>值类型&#x2F;可选值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>ksio_asset_js</code></td>
+<td><code>string | string[]</code></td>
+<td>省略扩展名的 JS 文件路径</td>
+</tr>
+<tr>
+<td><code>ksio_asset_css</code></td>
+<td><code>string | string[]</code></td>
+<td>省略扩展名的 CSS 文件路径</td>
+</tr>
+</tbody></table>
+<h2 id="布局插槽"><a href="#布局插槽" class="headerlink" title="布局插槽"></a>布局插槽</h2><p>主题预置布局模板中部分区域的内容可在外部自定义，这些区域叫做「插槽」：</p>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>值类型&#x2F;可选值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>ksio_slot_banner</code></td>
+<td><code>string</code></td>
+<td>头图</td>
+</tr>
+<tr>
+<td><code>ksio_slot_header</code></td>
+<td><code>string</code></td>
+<td>头部</td>
+</tr>
+<tr>
+<td><code>ksio_slot_title</code></td>
+<td><code>string</code></td>
+<td>标题</td>
+</tr>
+<tr>
+<td><code>ksio_slot_meta</code></td>
+<td><code>string</code></td>
+<td>作者、标签等信息</td>
+</tr>
+<tr>
+<td><code>ksio_slot_content</code></td>
+<td><code>string</code></td>
+<td>正文</td>
+</tr>
+<tr>
+<td><code>ksio_slot_footer</code></td>
+<td><code>string</code></td>
+<td>底部，大尺寸设备中视觉上是正文右侧</td>
+</tr>
+<tr>
+<td><code>ksio_slot_aside</code></td>
+<td><code>string</code></td>
+<td>侧边栏</td>
+</tr>
+</tbody></table>
+<h2 id="功能开关"><a href="#功能开关" class="headerlink" title="功能开关"></a>功能开关</h2><table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>值类型&#x2F;可选值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>ksio_shareable</code></td>
+<td><code>boolean</code></td>
+<td>是否显示分享按钮</td>
+</tr>
+</tbody></table>
+<h2 id="SEO"><a href="#SEO" class="headerlink" title="SEO"></a>SEO</h2><p>影响生成 SEO 相关信息的变量：</p>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>值类型&#x2F;可选值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>ksio_seo_title</code></td>
+<td><code>string</code></td>
+<td>显示在 <code>&lt;title&gt;</code> 中的页面标题，不指定则使用 <code>title</code></td>
+</tr>
+<tr>
+<td><code>ksio_seo_role</code></td>
+<td><code>&#39;writer&#39; | &#39;developer&#39;</code></td>
+<td>根据角色生成特定的页面描述</td>
+</tr>
+</tbody></table>
+
+</div>
+      <footer class="Article-footer col-md-3">
+  
+  <div class="Widget Widget--share">
+    <div class="Widget-body">
+      <p>分享到<i class="fa fa-share-alt"></i></p>
+      <div class="social-share" data-sites="wechat,weibo,twitter"></div>
+    </div>
+  </div>
+
+
+  <section class="Widget Widget--toc">
+  <div class="Widget-header">
+    <h2 class="Widget-title">目录</h2>
+  </div>
+  <div class="Widget-body"></div>
+</section>
+
+
+</footer>
+    </article>
+    <footer class="Page-footer Footer">
+  <div class="container-fluid">
+    
+    <div class="Footer-description">
+      
+        <!-- Important links -->
+        <nav class="Footer-navs">
+          <ul><li><a href="/zh/about/"><span>关于</span></a>
+</li><li><a href="/zh/about/#donation"><span>资助</span></a>
+</li></ul>
+        </nav>
+      
+      <div class="Footer-copyright">
+        <p>
+
+&copy; 2015-2025 <a href="https://linxoid.com/ourai?utm_source=https://lime-theme.github.io&amp;utm_medium=common-footer" target="_blank" rel="external nofollow">欧雷</a> 版权所有
+
+</p>
+        <p>由 <a href="https://linxoid.com/ourai/?utm_source=https://lime-theme.github.io&amp;utm_medium=common-footer" target="_blank" rel="external nofollow">欧雷</a> 用 ♥ 设计与开发</p>
+      </div>
+      <div class="Footer-licenses">
+        <p>本站通过 <a href="https://knosysio.github.io/?utm_source=https://lime-theme.github.io&amp;utm_medium=common-footer" target="_blank" rel="external nofollow">KnoSys</a> 借助 <a href="https://hexo.io" target="_blank" rel="external nofollow">Hexo</a> 生成</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </main>
+</div>
+
+
+
+
+    <script>$('.Article-content > table').addClass('table table-bordered')</script>
+    
+<script src="/javascripts/ksio/vendors/share.min.js"></script>
+
+<script src="/javascripts/ksio/components/page.js"></script>
+
+<script src="/javascripts/ksio/components/toc.js"></script>
+
+<script src="/javascripts/ksio/vendors/jquery.timeago.js"></script>
+
+<script src="/javascripts/ksio/vendors/jquery.timeago.zh-CN.js"></script>
+
+<script src="/javascripts/ksio/initializers/time.js"></script>
+
+<script src="/javascripts/ksio/vendors/jquery.lazyload.js"></script>
+
+<script src="/javascripts/ksio/initializers/lazyload.js"></script>
+
+  </body>
+</html>
+

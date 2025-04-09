@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+
+
+
+
+
+
+
+
+
+  
+  
+  
+    
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <title>概述 - Lime</title>
+
+
+  <meta property="og:title" content="概述">
+
+
+  <meta name="description" content="本主题由欧雷于 2015 年开始设计与开发，并在个人网站「欧雷流」及个人各种开源软件的文档站上使用多年；在设计时以提高阅读体验和保持简洁风格为最高原则，体现个性在其次。适用于博客、个人网站、API 文档站等以内容为主的网站。">
+  <meta property="og:description" content="本主题由欧雷于 2015 年开始设计与开发，并在个人网站「欧雷流」及个人各种开源软件的文档站上使用多年；在设计时以提高阅读体验和保持简洁风格为最高原则，体现个性在其次。适用于博客、个人网站、API 文档站等以内容为主的网站。">
+
+
+
+  
+    
+  
+
+
+
+<!-- 页面渲染兼容性 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<!-- 订阅 -->
+
+<meta name="theme-color" content="#0871ab">
+<link rel="shortcut icon" href="/images/ksio/favicon.ico">
+
+
+    
+<link rel="stylesheet" href="/stylesheets/global.css">
+
+    
+<link rel="stylesheet" href="/stylesheets/ksio/vendors/share.css">
+
+<link rel="stylesheet" href="/stylesheets/local/syntax-highlighting.css">
+
+<link rel="stylesheet" href="/stylesheets/local/pages/post.css">
+
+<link rel="stylesheet" href="/stylesheets/local/pages/doc.css">
+
+    
+
+    
+<script src="/javascripts/ksio/vendors/jquery-1.11.3.min.js"></script>
+
+    
+<script src="/javascripts/ksio/vendors/bootstrap.min.js"></script>
+
+  </head>
+  
+  
+  <body class="Page" itemscope itemtype="http://schema.org/WebPage">
+    
+
+  <header class="Page-header">
+  <div class="navbar navbar-static-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        
+          <button class="navbar-toggle collapsed" type="button" data-target=".Page-navs" data-toggle="collapse">
+            <span class="sr-only">Toggle navs</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        
+        
+          
+
+
+  <a class="navbar-brand" href="/">Lime</a>
+
+
+        
+      </div>
+      <!-- Nav menus -->
+      <nav class="Page-navs navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+  
+  
+  
+    
+    
+      <li><a href="/zh/guides/">文档</a>
+</li>
+    
+  
+
+  
+  
+  
+    
+    
+      <li><a href="/zh/posts/">博客</a>
+</li>
+    
+  
+
+  
+  
+  
+    <li class="dropdown">
+      <a class="dropdown-toggle" href="javascript:void(0);" data-toggle="dropdown">关于 <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+  
+  
+  
+    
+    
+      <li><a href="/zh/about/">本站</a>
+</li>
+    
+  
+
+  
+  
+  
+    
+    
+      <li><a href="https://linxoid.com/ourai?utm_source=https://lime-theme.github.io&amp;utm_medium=common-header" target="_blank" rel="external nofollow">作者</a>
+</li>
+    
+  
+
+  
+  
+  
+    
+    
+      <li><a href="https://github.com/lime-theme?utm_source=https://lime-theme.github.io&amp;utm_medium=common-header" target="_blank" rel="external nofollow">GitHub</a>
+</li>
+    
+  
+
+</ul>
+    </li>
+  
+
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="Page-content">
+  
+  
+    <aside class="Page-aside">
+      <div class="AsideBrand">
+
+
+  <a href="/">Lime</a>
+
+</div>
+      <nav class="AsideNav"><ul>
+  
+  
+    
+  
+  
+    <li>
+      
+      
+      
+      
+      
+      
+        
+          <a href="/zh/guides/">概述</a>
+        
+      
+    </li>
+  
+    <li>
+      
+      
+      
+      
+      
+      
+        
+          <a href="/zh/guides/getting-started/">快速上手</a>
+        
+      
+    </li>
+  
+    <li>
+      
+      
+      
+      
+      
+      
+        <span>API</span>
+        <ul>
+  
+  
+    
+  
+  
+    <li>
+      
+      
+      
+      
+      
+      
+        <a href="/zh/apis/site-config/">网站配置</a>
+      
+    </li>
+  
+    <li>
+      
+      
+      
+      
+      
+      
+        <a href="/zh/apis/page-config/">页面配置</a>
+      
+    </li>
+  
+    <li>
+      
+      
+      
+      
+      
+      
+        <a href="/zh/apis/html-reuse/">结构复用</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+</nav>
+    </aside>
+  
+  <main class="Page-main">
+    <article class="Article container-fluid">
+      <header class="Article-header">
+        
+  
+    <h1 class="Article-title">概述</h1>
+  
+  
+
+
+      </header>
+      <div class="Article-content col-md-9"><p>本主题由<a target="_blank" rel="noopener" href="https://linxoid.com/ourai/">欧雷</a>于 2015 年开始设计与开发，并在个人网站「<a target="_blank" rel="noopener" href="https://ourai.ws/">欧雷流</a>」及个人各种开源软件的文档站上使用多年；在设计时以提高阅读体验和保持简洁风格为最高原则，体现个性在其次。</p>
+<p>因而，适用于博客、个人网站、API 文档站等以内容为主的网站。</p>
+<h2 id="兼容环境"><a href="#兼容环境" class="headerlink" title="兼容环境"></a>兼容环境</h2><p>在编写主题代码时，尽可能地使用兼容性高的写法，并适配多种网站构建方式：</p>
+<table>
+<thead>
+<tr>
+<th>环境</th>
+<th>兼容性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>浏览器</td>
+<td>大部分 PC 与移动端现代浏览器</td>
+</tr>
+<tr>
+<td>静态网站生成器</td>
+<td><a target="_blank" rel="noopener" href="https://jekyllrb.com/">Jekyll</a>、<a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></td>
+</tr>
+</tbody></table>
+<h2 id="相关技术"><a href="#相关技术" class="headerlink" title="相关技术"></a>相关技术</h2><p>既然你来了解本主题了，那我就假定你已具备 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a>、<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> 和 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a> 相关知识——无论你通过何种方式使用本主题，它们都是本主题得以在浏览器中呈现效果的基本条件。</p>
+<p>为了更好地搭建页面与提供更丰富的使用体验，本主题依赖（并包含）下列库和服务：</p>
+<table>
+<thead>
+<tr>
+<th>名称与版本</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://getbootstrap.com/docs/3.3/">Bootstrap <code>v3.3.6</code></a></td>
+<td>界面交互</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://fontawesome.com/v4/icons/">Font Awesome <code>v4.7</code></a></td>
+<td>字体图标</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://linxoid.com/">LinXoid</a></td>
+<td>链接到互联网名片</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://disqus.com/">Disqus</a></td>
+<td>国外的评论托管服务，因众所周知的缘由而无法正常访问，主题支持通过 <a target="_blank" rel="noopener" href="https://disqusjs.skk.moe/">DisqusJS</a> 为国内用户代理查看评论</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/overtrue/share.js">Share.js</a></td>
+<td>将页面便捷分享到社交网络</td>
+</tr>
+</tbody></table>
+<p>若是搭配静态网站生成器使用，除了 <a target="_blank" rel="noopener" href="https://www.markdownguide.org/">Markdown</a> 和 <a target="_blank" rel="noopener" href="https://yaml.org/">YAML</a> 之外，根据你的选择，还需额外了解一些技术：</p>
+<table>
+<thead>
+<tr>
+<th>静态网站生成器</th>
+<th>特定技术</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Jekyll</td>
+<td><a target="_blank" rel="noopener" href="https://kramdown.gettalong.org/">kramdown</a>、<a target="_blank" rel="noopener" href="https://shopify.dev/docs/api/liquid">Liquid</a></td>
+</tr>
+<tr>
+<td>Hexo</td>
+<td><a target="_blank" rel="noopener" href="https://ejs.co/">EJS</a></td>
+</tr>
+</tbody></table>
+<p>当你想利用主题内的可复用资源以及打算修改源码或为主题做贡献的话，需要了解下编写源码的语言（方言）：</p>
+<table>
+<thead>
+<tr>
+<th>构成部分</th>
+<th>语言或方言</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>模板</td>
+<td><a target="_blank" rel="noopener" href="https://shopify.dev/docs/api/liquid">Liquid</a>（Jekyll）、<a target="_blank" rel="noopener" href="https://ejs.co/">EJS</a>（Hexo）</td>
+</tr>
+<tr>
+<td>样式</td>
+<td><a target="_blank" rel="noopener" href="https://sass-lang.com/">Sass</a>（SCSS）</td>
+</tr>
+<tr>
+<td>脚本</td>
+<td><a target="_blank" rel="noopener" href="https://coffeescript.org/">CoffeeScript</a>（遗留代码，新功能不用）</td>
+</tr>
+</tbody></table>
+<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p>本主题支持多种使用方式，详见《<a href="/zh/guides/getting-started/">快速上手</a>》。</p>
+<h3 id="主题署名"><a href="#主题署名" class="headerlink" title="主题署名"></a>主题署名</h3><p>虽说本主题源码开放并免费使用，但还是希望能够在使用时保留主题和提供者的名字与来源——</p>
+<p>在使用时，默认会在页面底部（即 <code>footer</code> 中）的版权声明右边显示主题和提供者的名字与来源相关信息：</p>
+<figure>
+  <img src="/zh/guides/theme-provider.jpg" alt="主题提供者声明">
+  <figcaption>主题提供者声明</figcaption>
+</figure>
+
+<p>但这并非是强制的，可通过在<a href="/zh/apis/site-config/">网站配置</a>文件中将 <a href="/zh/apis/site-config/#copyright"><code>copyright.provider</code></a> 设为 <code>false</code> 以关闭显示；或把 <a href="/zh/apis/site-config/#footer"><code>footer.partial</code></a> 改为自定义的页脚去覆盖。</p>
+<p>如果可以，请不要关闭默认页脚中主题和提供者的名字与来源的显示；如需完全使用自定义页脚文件，也请在页脚加上如下 HTML 代码：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">本站主题 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://lime-theme.github.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;_blank&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;external nofollow&quot;</span>&gt;</span>Lime<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> 由 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://linxoid.com/ourai&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;_blank&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;external nofollow&quot;</span>&gt;</span>欧雷<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> 提供<br></code></pre></td></tr></table></figure>
+
+<p>感谢理解与配合！🙏🏼🙏🏼🙏🏼</p>
+<h3 id="反馈问题"><a href="#反馈问题" class="headerlink" title="反馈问题"></a>反馈问题</h3><p>若看遍本站内的文档和 <a target="_blank" rel="noopener" href="https://github.com/lime-theme/lime/issues">GitHub Issues</a> 上的已有问题后仍无法解决所遇到的问题，请尽可能地<a target="_blank" rel="noopener" href="https://github.com/lime-theme/lime/issues/new/choose">详细描述并提交你的问题</a>，我会尽快处理。</p>
+<p>或者你有条件帮忙修复，欢迎提 <a target="_blank" rel="noopener" href="https://github.com/lime-theme/lime/pulls">PR</a>！👏🏼👏🏼👏🏼</p>
+
+</div>
+      <footer class="Article-footer col-md-3">
+  
+  <div class="Widget Widget--share">
+    <div class="Widget-body">
+      <p>分享到<i class="fa fa-share-alt"></i></p>
+      <div class="social-share" data-sites="wechat,weibo,twitter"></div>
+    </div>
+  </div>
+
+
+  <section class="Widget Widget--toc">
+  <div class="Widget-header">
+    <h2 class="Widget-title">目录</h2>
+  </div>
+  <div class="Widget-body"></div>
+</section>
+
+
+</footer>
+    </article>
+    <footer class="Page-footer Footer">
+  <div class="container-fluid">
+    
+    <div class="Footer-description">
+      
+        <!-- Important links -->
+        <nav class="Footer-navs">
+          <ul><li><a href="/zh/about/"><span>关于</span></a>
+</li><li><a href="/zh/about/#donation"><span>资助</span></a>
+</li></ul>
+        </nav>
+      
+      <div class="Footer-copyright">
+        <p>
+
+&copy; 2015-2025 <a href="https://linxoid.com/ourai?utm_source=https://lime-theme.github.io&amp;utm_medium=common-footer" target="_blank" rel="external nofollow">欧雷</a> 版权所有
+
+</p>
+        <p>由 <a href="https://linxoid.com/ourai/?utm_source=https://lime-theme.github.io&amp;utm_medium=common-footer" target="_blank" rel="external nofollow">欧雷</a> 用 ♥ 设计与开发</p>
+      </div>
+      <div class="Footer-licenses">
+        <p>本站通过 <a href="https://knosysio.github.io/?utm_source=https://lime-theme.github.io&amp;utm_medium=common-footer" target="_blank" rel="external nofollow">KnoSys</a> 借助 <a href="https://hexo.io" target="_blank" rel="external nofollow">Hexo</a> 生成</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </main>
+</div>
+
+
+
+
+    <script>$('.Article-content > table').addClass('table table-bordered')</script>
+    
+<script src="/javascripts/ksio/vendors/share.min.js"></script>
+
+<script src="/javascripts/ksio/components/page.js"></script>
+
+<script src="/javascripts/ksio/components/toc.js"></script>
+
+<script src="/javascripts/ksio/vendors/jquery.timeago.js"></script>
+
+<script src="/javascripts/ksio/vendors/jquery.timeago.zh-CN.js"></script>
+
+<script src="/javascripts/ksio/initializers/time.js"></script>
+
+<script src="/javascripts/ksio/vendors/jquery.lazyload.js"></script>
+
+<script src="/javascripts/ksio/initializers/lazyload.js"></script>
+
+  </body>
+</html>
+

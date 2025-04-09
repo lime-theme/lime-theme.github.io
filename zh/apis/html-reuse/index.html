@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+
+
+
+
+
+
+
+
+
+  
+  
+  
+    
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <title>结构复用 - Lime</title>
+
+
+  <meta property="og:title" content="结构复用">
+
+
+  <meta name="description" content="本主题由欧雷于 2015 年开始设计与开发，并在个人网站「欧雷流」及个人各种开源软件的文档站上使用多年；在设计时以提高阅读体验和保持简洁风格为最高原则，体现个性在其次。适用于博客、个人网站、API 文档站等以内容为主的网站。">
+  <meta property="og:description" content="本主题由欧雷于 2015 年开始设计与开发，并在个人网站「欧雷流」及个人各种开源软件的文档站上使用多年；在设计时以提高阅读体验和保持简洁风格为最高原则，体现个性在其次。适用于博客、个人网站、API 文档站等以内容为主的网站。">
+
+
+
+  
+    
+  
+
+
+
+<!-- 页面渲染兼容性 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<!-- 订阅 -->
+
+<meta name="theme-color" content="#0871ab">
+<link rel="shortcut icon" href="/images/ksio/favicon.ico">
+
+
+    
+<link rel="stylesheet" href="/stylesheets/global.css">
+
+    
+<link rel="stylesheet" href="/stylesheets/ksio/vendors/share.css">
+
+<link rel="stylesheet" href="/stylesheets/local/syntax-highlighting.css">
+
+<link rel="stylesheet" href="/stylesheets/local/pages/post.css">
+
+<link rel="stylesheet" href="/stylesheets/local/pages/doc.css">
+
+    
+
+    
+<script src="/javascripts/ksio/vendors/jquery-1.11.3.min.js"></script>
+
+    
+<script src="/javascripts/ksio/vendors/bootstrap.min.js"></script>
+
+  </head>
+  
+  
+  <body class="Page" itemscope itemtype="http://schema.org/WebPage">
+    
+
+  <header class="Page-header">
+  <div class="navbar navbar-static-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        
+          <button class="navbar-toggle collapsed" type="button" data-target=".Page-navs" data-toggle="collapse">
+            <span class="sr-only">Toggle navs</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        
+        
+          
+
+
+  <a class="navbar-brand" href="/">Lime</a>
+
+
+        
+      </div>
+      <!-- Nav menus -->
+      <nav class="Page-navs navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+  
+  
+  
+    
+    
+      <li><a href="/zh/guides/">文档</a>
+</li>
+    
+  
+
+  
+  
+  
+    
+    
+      <li><a href="/zh/posts/">博客</a>
+</li>
+    
+  
+
+  
+  
+  
+    <li class="dropdown">
+      <a class="dropdown-toggle" href="javascript:void(0);" data-toggle="dropdown">关于 <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+  
+  
+  
+    
+    
+      <li><a href="/zh/about/">本站</a>
+</li>
+    
+  
+
+  
+  
+  
+    
+    
+      <li><a href="https://linxoid.com/ourai?utm_source=https://lime-theme.github.io&amp;utm_medium=common-header" target="_blank" rel="external nofollow">作者</a>
+</li>
+    
+  
+
+  
+  
+  
+    
+    
+      <li><a href="https://github.com/lime-theme?utm_source=https://lime-theme.github.io&amp;utm_medium=common-header" target="_blank" rel="external nofollow">GitHub</a>
+</li>
+    
+  
+
+</ul>
+    </li>
+  
+
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="Page-content">
+  
+  
+    <aside class="Page-aside">
+      <div class="AsideBrand">
+
+
+  <a href="/">Lime</a>
+
+</div>
+      <nav class="AsideNav"><ul>
+  
+  
+    
+  
+  
+    <li>
+      
+      
+      
+      
+      
+      
+        
+          <a href="/zh/guides/">概述</a>
+        
+      
+    </li>
+  
+    <li>
+      
+      
+      
+      
+      
+      
+        
+          <a href="/zh/guides/getting-started/">快速上手</a>
+        
+      
+    </li>
+  
+    <li>
+      
+      
+      
+      
+      
+      
+        <span>API</span>
+        <ul>
+  
+  
+    
+  
+  
+    <li>
+      
+      
+      
+      
+      
+      
+        <a href="/zh/apis/site-config/">网站配置</a>
+      
+    </li>
+  
+    <li>
+      
+      
+      
+      
+      
+      
+        <a href="/zh/apis/page-config/">页面配置</a>
+      
+    </li>
+  
+    <li>
+      
+      
+      
+      
+      
+      
+        <a class="is-selected" href="/zh/apis/html-reuse/">结构复用</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+</nav>
+    </aside>
+  
+  <main class="Page-main">
+    <article class="Article container-fluid">
+      <header class="Article-header">
+        
+  
+    <h1 class="Article-title">结构复用</h1>
+  
+  
+
+
+      </header>
+      <div class="Article-content col-md-9"><p>对 HTML 所描述结构的复用，可分为「布局」与「片段」两大类。</p>
+<h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><table>
+<thead>
+<tr>
+<th>名称&#x2F;路径</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>default</code></td>
+<td>作为其他布局的基础结构，包含了 <code>&lt;head&gt;</code> 及其内容，继承该布局的其他布局的内容会被渲染在 <code>&lt;body&gt;</code> 内</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td>继承了 <code>default</code>，用于常规页面</td>
+</tr>
+<tr>
+<td><code>post</code></td>
+<td>继承了 <code>page</code>，用于文章</td>
+</tr>
+<tr>
+<td><code>doc</code></td>
+<td>继承了 <code>default</code>，用于使用指南、API 文档等</td>
+</tr>
+<tr>
+<td><code>blank</code></td>
+<td>没有任何 HTML 标签，完全空白</td>
+</tr>
+</tbody></table>
+<h2 id="片段"><a href="#片段" class="headerlink" title="片段"></a>片段</h2><p>像 Jekyll 这类静态网站生成器并没有「组件」相关支持，但通过它提供的 <a target="_blank" rel="noopener" href="https://jekyllrb.com/docs/includes/"><code>include</code></a> 机制可以进行一定程度上的模拟。</p>
+<p>虽没明说，但 <code>include</code> 这种复用机制就相当于是模板引擎的「partial」，故在此也将通过 <code>include</code> 使用的片段都称为「partial」。</p>
+<h3 id="常规"><a href="#常规" class="headerlink" title="常规"></a>常规</h3><p>每个页面顶多会用到一次的非功能性片段：</p>
+<table>
+<thead>
+<tr>
+<th>名称&#x2F;路径</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>meta/seo</code></td>
+<td>SEO 相关标签</td>
+</tr>
+<tr>
+<td><code>meta/render</code></td>
+<td>页面渲染及兼容性相关标签</td>
+</tr>
+<tr>
+<td><code>meta/feed</code></td>
+<td>Feed 订阅相关标签</td>
+</tr>
+<tr>
+<td><code>meta/brand</code></td>
+<td>网站品牌相关标签</td>
+</tr>
+<tr>
+<td><code>head</code></td>
+<td><code>&lt;head&gt;</code> 内非样式与脚本内容</td>
+</tr>
+<tr>
+<td><code>header</code></td>
+<td>页面头部</td>
+</tr>
+<tr>
+<td><code>footer</code></td>
+<td>页面底部</td>
+</tr>
+</tbody></table>
+<h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><p>多次使用的一般性可复用片段，通常会传入参数：</p>
+<table>
+<thead>
+<tr>
+<th>名称&#x2F;路径</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>link</code></td>
+<td>用于站内或站外链接的 <code>&lt;a&gt;</code> 标签</td>
+</tr>
+<tr>
+<td><code>brand-link</code></td>
+<td>网站品牌链接</td>
+</tr>
+<tr>
+<td><code>nav-list</code></td>
+<td>导航菜单条目列表</td>
+</tr>
+<tr>
+<td><code>copyright</code></td>
+<td>版权声明文本及链接</td>
+</tr>
+<tr>
+<td><code>doc-toc</code></td>
+<td>用于使用指南、API 文档等的文档目录树</td>
+</tr>
+</tbody></table>
+<h3 id="部件"><a href="#部件" class="headerlink" title="部件"></a>部件</h3><p>为完成特定业务功能的片段，没有传入的参数：</p>
+<table>
+<thead>
+<tr>
+<th>名称&#x2F;路径</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>disqus</code></td>
+<td>Disqus 评论框</td>
+</tr>
+<tr>
+<td><code>comment</code></td>
+<td>综合评论框</td>
+</tr>
+<tr>
+<td><code>share</code></td>
+<td>分享到 SNS</td>
+</tr>
+<tr>
+<td><code>toc</code></td>
+<td>页内目录树</td>
+</tr>
+</tbody></table>
+
+</div>
+      <footer class="Article-footer col-md-3">
+  
+  <div class="Widget Widget--share">
+    <div class="Widget-body">
+      <p>分享到<i class="fa fa-share-alt"></i></p>
+      <div class="social-share" data-sites="wechat,weibo,twitter"></div>
+    </div>
+  </div>
+
+
+  <section class="Widget Widget--toc">
+  <div class="Widget-header">
+    <h2 class="Widget-title">目录</h2>
+  </div>
+  <div class="Widget-body"></div>
+</section>
+
+
+</footer>
+    </article>
+    <footer class="Page-footer Footer">
+  <div class="container-fluid">
+    
+    <div class="Footer-description">
+      
+        <!-- Important links -->
+        <nav class="Footer-navs">
+          <ul><li><a href="/zh/about/"><span>关于</span></a>
+</li><li><a href="/zh/about/#donation"><span>资助</span></a>
+</li></ul>
+        </nav>
+      
+      <div class="Footer-copyright">
+        <p>
+
+&copy; 2015-2025 <a href="https://linxoid.com/ourai?utm_source=https://lime-theme.github.io&amp;utm_medium=common-footer" target="_blank" rel="external nofollow">欧雷</a> 版权所有
+
+</p>
+        <p>由 <a href="https://linxoid.com/ourai/?utm_source=https://lime-theme.github.io&amp;utm_medium=common-footer" target="_blank" rel="external nofollow">欧雷</a> 用 ♥ 设计与开发</p>
+      </div>
+      <div class="Footer-licenses">
+        <p>本站通过 <a href="https://knosysio.github.io/?utm_source=https://lime-theme.github.io&amp;utm_medium=common-footer" target="_blank" rel="external nofollow">KnoSys</a> 借助 <a href="https://hexo.io" target="_blank" rel="external nofollow">Hexo</a> 生成</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </main>
+</div>
+
+
+
+
+    <script>$('.Article-content > table').addClass('table table-bordered')</script>
+    
+<script src="/javascripts/ksio/vendors/share.min.js"></script>
+
+<script src="/javascripts/ksio/components/page.js"></script>
+
+<script src="/javascripts/ksio/components/toc.js"></script>
+
+<script src="/javascripts/ksio/vendors/jquery.timeago.js"></script>
+
+<script src="/javascripts/ksio/vendors/jquery.timeago.zh-CN.js"></script>
+
+<script src="/javascripts/ksio/initializers/time.js"></script>
+
+<script src="/javascripts/ksio/vendors/jquery.lazyload.js"></script>
+
+<script src="/javascripts/ksio/initializers/lazyload.js"></script>
+
+  </body>
+</html>
+
