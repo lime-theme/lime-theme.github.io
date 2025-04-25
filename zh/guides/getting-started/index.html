@@ -332,8 +332,27 @@
 <h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p>为保持在不同静态网站生成器中使用体验一致性，主题预置的静态资源存放在：</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><code class="hljs text">[ASSET_ROOT]<br>   ├── fonts<br>   │   └── ...<br>   ├── images<br>   │   └── ...<br>   ├── javascripts<br>   │   └── ...<br>   └── stylesheets<br>       └── ...<br></code></pre></td></tr></table></figure>
 
-<p><code>[ASSET_ROOT]</code> 在 Jekyll 和 Hexo 中分别是 <code>_assets</code> 与 <code>themes/lime/source</code>。即便如此，在实际使用时自定义文件的目录结构可以不按照这个来。</p>
-<p>另外，无论是静态资源还是动态模板，主题所提供的和强依赖的基本都放在 <code>ksio</code> 或 <code>_ksio</code> 文件夹下。</p>
+<p>其中，<code>[ASSET_ROOT]</code> 在不同的静态网站生成器中分别代表：</p>
+<table>
+<thead>
+<tr>
+<th>静态网站生成器</th>
+<th>具体文件夹</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Jekyll</td>
+<td><code>_assets</code></td>
+</tr>
+<tr>
+<td>Hexo</td>
+<td><code>themes/lime/source</code></td>
+</tr>
+</tbody></table>
+<p>无论是静态资源还是动态模板，主题所提供的和强依赖的基本都放在 <code>ksio</code> 或 <code>_ksio</code> 文件夹下，且为了便于区分与管理，建议自定义文件放在同级的 <code>local</code> 或 <code>_local</code> 文件夹中：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><code class="hljs text">[ASSET_ROOT]<br>   ├── ...<br>   └── stylesheets<br>       ├── ksio<br>       │   └── ...<br>       ├── local<br>       │   └── ...<br>       └── ...<br></code></pre></td></tr></table></figure>
+
+<p>即便如此，在实际使用时自定义文件的目录结构可以不按照这个来。</p>
 <h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><p>为满足多种使用场景，本主题提供了相应的方式——</p>
 <h3 id="包管理器"><a href="#包管理器" class="headerlink" title="包管理器"></a>包管理器</h3><p>Jekyll 的主题暂不支持通过 <a target="_blank" rel="noopener" href="https://rubygems.org/">Gem</a> 的方式使用，且 Ruby 版本最好为 <code>2.3.0</code>。</p>
 <p>若 Hexo 的版本在 <a target="_blank" rel="noopener" href="https://hexo.io/news/2020/07/29/hexo-5-released/"><code>5.0.0</code></a> 及以上，可在项目根文件夹下通过 <code>npm i hexo-theme-lime</code> 安装使用。</p>
@@ -343,6 +362,7 @@
 <li><code>hexo-theme-lime.zip</code></li>
 </ul>
 <p>解压后将文件夹与文件复制或挪动到自己项目的指定位置。</p>
+<h3 id="模板仓库"><a href="#模板仓库" class="headerlink" title="模板仓库"></a>模板仓库</h3><p>通过特殊的 GitHub 仓库一键复制配置好的仓库内容。</p>
 <h2 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h2><p>有几个静态资源文件是要手动创建的——</p>
 <h3 id="全局依赖"><a href="#全局依赖" class="headerlink" title="全局依赖"></a>全局依赖</h3><p>创建 <code>[ASSET_ROOT]/stylesheets/_helper.scss</code>，内容为：</p>
 <figure class="highlight scss"><table><tr><td class="code"><pre><code class="hljs scss"><span class="hljs-keyword">@import</span> <span class="hljs-string">&quot;ksio/helper&quot;</span>;<br></code></pre></td></tr></table></figure>
@@ -378,10 +398,10 @@
 <td><code>[ASSET_ROOT]/stylesheets/ksio/pages/_doc.scss</code></td>
 </tr>
 </tbody></table>
-<h2 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h2><h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><p>在 Hexo 中，可通过<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration#%E4%BD%BF%E7%94%A8%E4%BB%A3%E6%9B%BF%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">指定方式</a>为主题进行全局配置；而 Jekyll 并没有指定的配置方式，故主题的全局配置都挂在<a target="_blank" rel="noopener" href="https://jekyllrb.com/docs/configuration/">配置文件</a>中的 <code>ksio</code> 下面：</p>
+<h2 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h2><h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><p>在 Hexo 中，可通过<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration#%E4%BD%BF%E7%94%A8%E4%BB%A3%E6%9B%BF%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">指定方式</a>为主题进行全局配置，而 Jekyll 并没有指定的配置方式，故主题的全局配置都挂在<a target="_blank" rel="noopener" href="https://jekyllrb.com/docs/configuration/">配置文件</a>中的 <code>ksio</code> 下面：</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">ksio:</span><br>  <span class="hljs-attr">brand:</span><br>    <span class="hljs-attr">color:</span> <span class="hljs-string">&quot;#0871ab&quot;</span><br>  <span class="hljs-attr">copyright:</span><br>    <span class="hljs-attr">owner:</span><br>      <span class="hljs-attr">text:</span> <span class="hljs-string">欧雷流</span><br>      <span class="hljs-attr">url:</span> <span class="hljs-string">https://ourai.ws/</span><br></code></pre></td></tr></table></figure>
 
-<p>全部配置项详见《<a href="/zh/apis/site-config/#template">网站配置#模板</a>》。</p>
+<p>全部配置项详见《<a href="/zh/apis/site-config/#%E6%A8%A1%E6%9D%BF">网站配置#模板</a>》。</p>
 <h3 id="页面配置"><a href="#页面配置" class="headerlink" title="页面配置"></a>页面配置</h3><p>即定义在 Front Matter 中的变量，可用配置项详见《<a href="/zh/apis/page-config/">页面配置</a>》。</p>
 <p>在 Jekyll 中可按匹配规则为页面配置<a target="_blank" rel="noopener" href="https://jekyllrb.com/docs/configuration/front-matter-defaults/">批量设置默认值</a>，虽 Hexo 本身不具备此机制，但本主题在一定程度上进行了模拟，需在<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">网站配置文件</a>中添加：</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">ksio:</span><br>  <span class="hljs-attr">defaults:</span><br>    <span class="hljs-attr">layout:</span> <span class="hljs-comment"># 用于布局模板，值为对象</span><br>    <span class="hljs-attr">page:</span> <span class="hljs-comment"># 用于页面，值为数组</span><br></code></pre></td></tr></table></figure>
